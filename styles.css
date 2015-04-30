@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+body {
+	font-family: "Open Sans";
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	
+}
+
+h2 {
+	text-align:center;
+	font-weight: 100;
+	font-size: 24pt;
+	margin-bottom: 50px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 2px solid #ccc;
+}
+
+li {
+	border-top: 2pt solid #ccc;
+	padding: 20px;
+	position: relative;
+}
+
+	li .header {
+		border-radius: 50%;
+		border: 2px solid #ccc;
+		font-size: 10pt;
+		color: #9b9b9b;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		margin:auto;
+		background-color: white;
+		position: absolute;
+		top: -12px;
+		left: 50%;
+	}
+		
+	li .content {
+		display: inline-block;
+		width: 100%;
+		font-weight: 100;
+
+	}
+
+		li .content .image {
+			width:20%;
+		}
+	
+		li .content .text {
+			width: 48%;
+			font-size: 14pt;
+			font-weight: 100;
+			vertical-align: top;
+			padding-right: 2%;
+			border-right: 1px solid #ddd;
+		}
+		
+			li .content .text h3 {
+				font-size: 18pt;
+				margin-bottom: 10px;
+			}
+			
+			li .content .text p {
+				
+			}
+			
+				li .content .text p:first-of-type {
+					margin-top: 0;
+				}
+
+				li .content .text p:last-of-type {
+					margin-bottom: 0;
+				}
+			
+		
+		li .content .caveats {
+			width: 28%;
+			vertical-align: top;
+			padding-left: 2%;
+			font-size: 11pt;
+		}
+		
+			.caveats .title {
+				background-color: #952326;
+				padding: 5px 8px;
+				display: inline-block;
+				color: white;
+				font-weight: 400;
+				margin-bottom:10px;
+				margin-top: 10px;
+			}
