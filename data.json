@@ -1,19 +1,127 @@
 [
 	{
-		"title": "Targeting one person",
-		"image": "",
-		"steps": [
+		"title": "Kill list strikes",
+		"text": "These strikes target specific people or groups of people.",
+		"image": "img/people.png",
+		"subsections": [
 			{
-				"title": "Identify the person you believe merits targeting",
-				"text": "Build an intelligence dossier (at one point called \"electronic targeting folders\" or \"disposition matrix\") explaining on what basis this person is believed to be a member of an \"organized armed group\" posing a \"continuing, imminent threat.\"",
-				"caveats": "We don’t know how the government specifically picks its targets, beyond that it uses the intelligence community’s considerable resources.",
-				"image": ""
+				"title": "",
+				"steps": [
+					{
+						"title": "Identify the person that merits targeting",
+						"text": "Build an intelligence dossier (at one point called \"electronic targeting folders\") explaining on what basis this person is believed to be a member of an \"organized armed group\" posing a \"continuing, imminent threat.\"",
+						"caveats": "We don’t know how the government specifically picks its targets, beyond that it uses the intelligence community’s considerable resources.",
+						"image": "img/magnifying_glass.png"
+					},
+					{
+						"title": "Vet the name and available intelligence",
+						"text": "Share it with other intelligence agencies. <strong>If the target is a U.S. citizen</strong>, send the name to the U.S. Department of Justice for additional vetting. The government must show the person in question is a senior member of al-Qaida or an associated force, that they poses an imminent threat of attack against the United States and that capture isn't feasible.",
+						"caveats": "We don’t know the precise procedures intelligence agencies use to approve a person for targeting. We also don’t know how secret executive policies could affect this process.",
+						"image": "img/document_and_arrow.png"
+					},
+					{
+						"title": "Run it past a committee of administration lawyers and intelligence officials.",
+						"text": "They'll give a recommendation on whether they think targeting this person is lawful and meets policy goals.",
+						"caveats": "We don’t know precisely who is included in this meeting.  We also don’t know if there are layers of committees taking part in these deliberations.",
+						"image": "img/committee.png"
+					},
+					{
+						"title": "Get approval from the president.",
+						"text": "If this is a covert action (which all “kill list” strikes are, whether carried out by the military, the CIA or a combination of both), they must be approved by the president.",
+						"caveats": "Because the president is required by U.S. law to sign off on all covert actions, we can be pretty sure this step exists.",
+						"image": "img/document_with_check.png"
+					},
+					{
+						"title": "Find the target.",
+						"text": "Make sure they’re the same person whose targeting with lethal force  was approved. Determine whether attempting to capture the target instead is a valid option. Also decide whether this strike should be run by the military, the CIA or some combination of both. ",
+						"caveats": "In 2013, President Obama announced plans to move the drone program away from the CIA, consolidating it under the Department of Defense. Given the political difficulties of staging conventional military operations in places like Pakistan, it’s unclear how far that transition has progressed.",
+						"image": "img/target.png"
+					},
+					{
+						"title": "Determine potential collateral damage.",
+						"text": "Use intelligence, statistics and software to determine potential non-combatant casualties. Use different weapons or deployment strategies to lower casualties, if possible. This figure must be reassessed at the time of an actual attack.",
+						"subgroup": [
+							{
+								"title": "If the number of anticipated collateral casualties falls within acceptable threshold:",
+								"text": "Get approval from military authority (probably a general) to launch attack."
+							},
+							{
+								"title": "If the number of casualties is presumptively too high:",
+								"text": "Kick the request up to Washington; final approval must come from the secretary of defense or the president."
+							}
+						],
+						"caveats": "We don’t know whether there is any difference between how the CIA and traditional military forces determine anticipated or actual collateral damage.",
+						"image": "img/fire.png"
+					},
+					{
+						"title": "Launch the attack.",
+						"text": "",
+						"caveats": "",
+						"image": "img/drone.png",
+						"highlight": true
+					},
+					{
+						"title": "Report to congressional intelligence committees immediately.",
+						"text": "",
+						"caveats": "This step is also required by U.S. law in covert action cases.",
+						"image": "img/committee.png"
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Signature strikes",
+		"text": "These strikes target people or structures based on their behavior and characteristics, or \"signatures.\"",
+		"image": "img/people_and_structure.png",
+		"subsections": [
+			{
+				"title": "If the mission is covert:",
+				"steps": [
+					{
+						"title": "Figure out the targeting criteria.",
+						"text": "Is this target a known safe house for an organized armed group affiliated with al Qaeda or associated forces? Or is the military targeting groups of armed fighters in covert support of an allied government battling a jihadist insurgency?",
+						"caveats": "Very little is known about the process behind building a \"signature,\" or the pattern used to determine if a person, a group of people or structure is a target. We also don't know how military commanders differentiate between conventional and counterterrorism strikes in areas where the CIA is involved, or how the executive branch decides when to lend covert air support to a U.S. ally fighting insurgents.",
+						"image": "img/target.png"
+					},
+					{
+						"title": "Get the president's OK.",
+						"text": "As a covert action, the president must approve such strikes, and it is likely the president will want to be informed of the criteria used for recommending such strikes.",
+						"caveats": "We don’t know much about the criteria the president uses to make his decision, only that he is required to do so by covert action laws.",
+						"image": "img/document_with_check.png"
+					},
+					{
+						"title": "Launch the strike when ready.",
+						"text": "",
+						"caveats": "",
+						"image": "img/drone.png",
+						"highlight": true
+					},
+					{
+						"title": "Report to congressional intelligence committees immediately.",
+						"text": "Reporting might be before the fact, but can also&mdash;and more often&mdash;take place afterwards.",
+						"caveats": "What don’t we know? This step is also required by U.S. law in covert action cases.",
+						"image": "img/committee.png"
+					}
+				]
 			},
 			{
-				"title": "Vet the name and available intelligence",
-				"text": "Share it with other intelligence agencies. <strong>If the target is a U.S. citizen</strong>, send the name to the U.S. Department of Justice for additional vetting.",
-				"caveats": "We don’t know the precise procedures intelligence agencies use to approve a person for targeting. We also don’t know how secret executive policies could affect this process.",
-				"image": ""
+				"title": "If the mission is not covert:",
+				"steps": [
+					{
+						"title": "Launch the strike when ready.",
+						"text": "If the attack is taking place in an active warzone, the standing rules of engagement apply and military commanders have authority  to launch strikes against \"hostile forces\" as determined by intelligence and strategy.",
+						"caveats": "",
+						"image": "img/drone.png",
+						"highlight": true
+					},
+					{
+						"title": "Report to superiors.",
+						"text": "Oversight of these activities takes place through the military chain of command within the executive branch, and by reporting to congressional armed services committees at regularly scheduled meetings (or as required by Congress).",
+						"caveats": "",
+						"image": "img/committee.png"
+					}
+				]
 			}
 		]
 	}

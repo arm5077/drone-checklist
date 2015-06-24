@@ -2,51 +2,117 @@
 <html ng-app="droneApp">
 <head>
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
 	<!-- Site-specific styles -->
 	<link rel="stylesheet" href="styles.css" />
 
+	<!-- Pym.js -->
+	<script src="https://s3-us-west-2.amazonaws.com/nationaljournal/libraries/pym.js"></script>
+
 </head>
 
 <body ng-controller="droneController">
 	
-	<div class="section" ng-repeat="section in data">
-		<h2>{{section.title}}</h2>
-		<ul>
-			<li ng-repeat="step in section.steps">
-				<div class="header">{{$index + 1}}</div>
-				<div class="image">
-				</div>
-				
-				<table class="content">
-					<tbody>
-						<tr>
-							<td class="image">
-								<img src="#" />
-							</td>
-							<td class="text">
-								<h3>{{step.title}}</h3>
-								<p ng-bind-html="renderHTML(step.text)"></p>
-							</td>
-							<td class="caveats">
-								<div class="title">What don't we know?</div>
-								<div>{{step.caveats}}</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+	<div class="intro">
+		<p><strong>Drones strikes are powerful and precise.</strong> But once a missile is launched and the world takes notice, they're only as accurate as the policies and intelligence that led to them&mdash;as demonstrated by the attack that mistakenly killed two hostages earlier this year.</p>
+		<p><strong>So what do we know about the process?</strong> Much is classified. Documents leaked by former NSA contractor Edward Snowden and recently reported by <a target="blank" href="http://www.theguardian.com/uk-news/2015/jun/24/gchq-documents-raise-fresh-questions-over-uk-complicity-in-us-drone-strikes">the Guardian</a> and <a target="blank" href="http://www.nytimes.com/2015/06/25/world/middleeast/us-drone-strike-said-to-kill-doctor-trying-to-implant-bombs.html?smprod=nytcore-iphone&smid=nytcore-iphone-share">The New York Times</a> may shed more light on the issue. But here, using existing policy, journalistic accounts and academic research, we can begin to see the outlines of a bureaucratic system.</p> 
+		<p>Through a review of research and consultation with academics studying the American military, National Journal built this outline of how the White House and the Pentagon plan strikes&mdash;and what happens next.</p>
 
+		<div class="caveats">
+			<h4>Important caveats</h4>
+			<p>Much of the academic research used to build this graphic explicitly excluded classified material. This means we are likely missing steps in the process.</p>
+			<p>Wherever possible, we tried to make clear what we don't know. But there are surely questions we don't even know to ask.</p>
+		</div>
+		
+	</div>
+	
+	<div class="table-of-contents">
+		<div class="content">
+			<h2>Broadly speaking, there are {{data.length}} ways to target a drone strike.</h2>
+			<ul>
+				<li ng-repeat="section in data">
+					<a href="#{{section.title}}">
+						<img ng-src="{{section.image}}" class="headerImage" />
+						<h3>{{section.title}}</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Section-level, i.e. "kill list" v. "signature strike" -->
+	<div class="section" ng-repeat="section in data">
+		<a name="{{section.title}}"></a>
+		<img ng-src="{{section.image}}" class="headerImage" />
+		<h2>
+			{{section.title}}
+			<div class="text">{{section.text}}</div>
+		</h2>
+		
+		<!-- Subsection-level, i.e. covert v. non-covert -->
+		<ul class="section">
+			<li ng-repeat="subsection in section.subsections" class="subsection">
+				<h2 class="smaller" ng-show="subsection.title">{{subsection.title}}</h2>
 				
-				
+				<!-- Step level -->
+				<ul>
+					<li ng-repeat="step in subsection.steps" class="step">
+						<div class="header">{{$index + 1}}</div>
+						<div class="image">
+						</div>
+
+						<table class="content">
+							<tbody>
+								<tr>
+									<td class="image">
+										<img ng-src="{{step.image}}" />
+									</td>
+									<td class="text" ng-class="{center: !step.caveats}">
+										<h3 ng-class="{red: step.highlight == true}">{{step.title}}</h3>
+										<p ng-bind-html="renderHTML(step.text)"></p>
+										
+										<!-- Subgroup level -->
+										<div class="subgroup" ng-show="step.subgroup">
+											<div ng-repeat="substep in step.subgroup" class="step">
+												<h4>{{substep.title}}</h4>
+												<p>{{substep.text}}</p>
+											</div>
+										</div>
+										
+									</td>
+									<td class="caveats" ng-class="{hide: !step.caveats}">
+										<div class="title">Unknowns</div>
+										<div>{{step.caveats}}</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ul>
 			</li>
 		</ul>
+		
+	</div>
+
+	<div class="thanks">
+		<h2>Thanks</h2>
+		<p>Thanks to <a href="http://law.pepperdine.edu/faculty-research/faculty/?faculty=gregory_mcneal">Gregory S. McNeal</a> of the Pepperdine University School of Law and <a href="http://www.utexas.edu/law/faculty/rmc2289/">Robert M. Chesney</a> of the University of Texas School of Law for their assistance and research.</p>
+		<p>Special thanks to <a href="https://www.wcl.american.edu/faculty/anderson/">Kenneth Anderson</a> of the American University Washington College of Law and <a href="http://www.defenseone.com/voices/molly-otoole/8854/">Molly O'Toole</a> of <a href="http://www.defenseone.com/">Defense One</a> for their close attention to this project.</p>
+		<p><strong>Illustrations:</strong> Stephanie Stamm</p>
 	</div>
 	
 </body>
 
 <!-- Site-specific scripts -->
 <script src="app.js"></script>
+
+<script type="text/javascript">
+	var pymChild = new pym.Child();
+	setInterval(function(){ pymChild.sendHeight(); console.log("Sending pym ping!") }, 250);
+</script>
 
 </html>

@@ -4,6 +4,15 @@ body {
 	font-family: "Open Sans";
 }
 
+.red {
+	color: #952326;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
@@ -17,18 +26,153 @@ h2 {
 	margin-bottom: 50px;
 }
 
+	h2.smaller {
+		font-size: 20pt;
+		background-color: #952326;
+		padding: 5px 10px;
+		color: white;
+		display:inline-block;
+		margin-bottom: 40px;
+	}
+
+	h2 .text {
+		font-size: 16pt;
+		max-width: 600px;
+		margin:auto;
+	}
+
+.intro {
+	width:50%;
+	min-width:500px;
+	font-size: 13pt;
+	margin: 0px auto 10px;
+	line-height: 1.5em;
+}
+
+	.intro a {
+		text-decoration: underline;
+	}
+	
+	.intro p.bigger {
+		font-size: 18pt;
+	}
+	
+	.intro .caveats, .thanks {
+		padding: 20px;
+		background-color: #DCC7C7;
+		border-radius: 5px;
+		margin-bottom: 50px;
+		font-weight: 100;
+	}
+	
+		.intro .caveats p:first-of-type, .thanks p:first-of-type {
+			margin-top: 0px;
+		}
+
+		.intro .caveats h4, .thanks h2 {
+			margin-bottom: 10px;
+		}
+
+.table-of-contents {
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.table-of-contents .content {
+	display: inline-block;
+	padding: 50px;
+	background-color: #efefef;
+	border: 1px solid #ccc;
+}
+
+.table-of-contents ul {
+	display:block;
+	text-align: center;
+}
+
+.table-of-contents img {
+	width: 100px;
+}
+
+.table-of-contents li {
+	display:inline-block;
+	margin-right: 50px;
+	padding-right: 50px;
+	border-right: 1px solid #ccc;
+	border-bottom: 0;
+}
+
+	.table-of-contents li:last-child {
+		border: 0;
+		margin-right: 0px;
+		padding-right: 0px;
+	}
+	
+.thanks {
+	padding: 20px;
+	width: 50%;
+	min-width: 500px;
+	background-color: #9EBEB8;
+	margin:-30px auto 0px;
+}
+
+	.thanks a {
+		font-weight: 400;
+	}
+	
+		.thanks a:hover {
+			text-decoration: underline;
+		}
+
 ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+div.section {
+	margin-bottom: 75px;
+}
+
+ul.section {
+	border: 0;
+	width: 90%;
+	margin: auto;
+
+}
+
+	ul.section:last-child {
+		margin-bottom: 0;
+	}
+
+img.headerImage { 
+	margin: 0px auto 10px;
+	display: block;
+}
+
+li.subsection {
+	margin-bottom: 40px;
+	text-align:center;
+}
+
+	li.subsection:last-child {
+		margin-bottom: 0px;
+		border-bottom: solid 5px #ccc;
+	}
+	
+ul.step {
 	border-bottom: 2px solid #ccc;
 }
 
-li {
+li.step {
+	text-align: left;
 	border-top: 2pt solid #ccc;
 	padding: 20px;
 	position: relative;
 }
+	li.step:nth-child(2n - 1) {
+		//background-color: rgba(0,0,0,.01);
+	}
 
 	li .header {
 		border-radius: 50%;
@@ -47,7 +191,6 @@ li {
 	}
 		
 	li .content {
-		display: inline-block;
 		width: 100%;
 		font-weight: 100;
 
@@ -55,17 +198,26 @@ li {
 
 		li .content .image {
 			width:20%;
+			text-align: center;
+			vertical-align: top;
 		}
 	
+			li .content .image img {
+				max-height: 100px;
+			}
+			
 		li .content .text {
 			width: 48%;
 			font-size: 14pt;
 			font-weight: 100;
 			vertical-align: top;
 			padding-right: 2%;
-			border-right: 1px solid #ddd;
 		}
 		
+			li .content .text.center {
+				vertical-align: middle;
+			}
+			
 			li .content .text h3 {
 				font-size: 18pt;
 				margin-bottom: 10px;
@@ -83,13 +235,36 @@ li {
 					margin-bottom: 0;
 				}
 			
+			li .content .text .subgroup {
+				padding: 20px;
+				border: 1px solid #ccc;
+				margin: 20px 0px 0px;
+			}
+			
+				li .content .text .subgroup .step {
+					margin-bottom: 15px;
+				}
+			
+				li .content .text .subgroup .step:last-child {
+					margin-bottom: 0px;;
+				}
+			
+					li .content .text .subgroup .step h4 {
+						margin-bottom: 5px;
+					}
 		
 		li .content .caveats {
 			width: 28%;
 			vertical-align: top;
 			padding-left: 2%;
 			font-size: 11pt;
+			border-left: 1px solid #ddd;
 		}
+		
+			li .content .caveats.hide {
+				opacity: 0;
+				border: none;
+			}
 		
 			.caveats .title {
 				background-color: #952326;
@@ -100,3 +275,82 @@ li {
 				margin-bottom:10px;
 				margin-top: 10px;
 			}
+			
+@media screen and (max-width: 700px) {
+
+	.intro, .thanks {
+		width: 90%;
+		font-size: 11pt;
+		min-width: 0;
+	}
+	
+	li .content .image, li .content .text, li .content .caveats {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	
+	li .content .text {
+		text-align: left;
+	}
+	
+		li .content .text h3 {
+			text-align: center;
+		}
+		
+	li .content .caveats {
+		border: 1px solid #952326;
+		margin-top: 10px;
+		padding: 10px;
+	}
+	
+		li .content .caveats.hide {
+			display:none;
+		}
+
+	h2 {
+		font-size: 20pt;
+	}
+
+		h2.smaller {
+			font-size: 16pt;
+		}
+	
+	li .content .text h3 {
+		font-size: 15pt;
+	}
+	
+	li .content .text {
+		font-size: 12pt;
+	}	
+	
+	li .content .caveats {
+		margin-bottom: 10px;
+	}
+	
+	.table-of-contents {
+		padding: 20px;
+	}
+	
+	.table-of-contents h2 {
+		margin-bottom: 20px;
+	}
+	
+	.table-of-contents li {
+		display:inline-block;
+		border: 0;
+		border-bottom: 1px solid #ccc;
+		padding: 0 0 30px 0;
+		margin: 0 0 30px 0;
+		width: 100%;
+	}
+	
+	.table-of-contents li:last-child {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.intro .caveats {
+		margin-bottom: 20px;
+	}
+}
